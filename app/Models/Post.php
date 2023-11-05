@@ -54,7 +54,7 @@ class Post
         // }
         // maksud kode ini adalah, ambil dulu semua nya dengan $posts, 
         // lalu di looping satu2
-        
+         
         // return di bawah ini menggantikan foreach di atas
         return $posts->firstWhere('slug', $slug);
         // return ini maksud nya adalah ambil satu data yang pertama di temukan, yang dimana 'slug' nya
