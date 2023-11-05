@@ -1,0 +1,34 @@
+    {{-- Nav bar --}}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <div class="container">
+            <a class="navbar-brand" href="/">Baygon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link{{ $judul === 'Home' ? ' active text-decoration-underline' : '' }}"
+                            href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{ $judul === 'About' ? ' active text-decoration-underline' : '' }}"
+                            href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{ $judul === 'Blog' ? ' active text-decoration-underline' : '' }}"
+                            href="/blog">blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disable" style="cursor: no-drop;">+18</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    {{-- Akhir Navbar --}}
