@@ -3,7 +3,7 @@
 {{-- @dd($posts) --}}
 
 @section('container')
-    <h1 class="container text-center">Halaman Blog</h1>
+    <h1 class="container text-center">Post Category : {{ $category }}</h1>
     <br>
     <div class="pb-5 mb-5">
         @foreach ($posts as $post)

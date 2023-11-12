@@ -115,5 +115,97 @@ atau video nya: https://youtu.be/pZqk57Xvujs?si=YUlolQhWCjrf7VBJ
 
 jika di video, instalasi menggunakan Composer
 
+<hr>
+dilaravel ada konsep migrasi
+Migrasi itu sama seperti control penuh ke DB 
+
+<hr>
+
+Pola catatan aktif adalah pendekatan untuk mengakses data dalam database.Tabel atau tampilan basis data dibungkus menjadi kelas.Dengan demikian, instance objek diikat ke satu baris dalam tabel.Setelah membuat suatu objek, baris baru ditambahkan ke tabel setelah disimpan.Objek apa pun yang dimuat mendapatkan informasinya dari database.Ketika suatu objek diperbarui, baris yang sesuai dalam tabel juga diperbarui.Kelas pembungkus mengimplementasikan metode atau properti aksesor untuk setiap kolom dalam tabel atau tampilan.
+Pola ini biasanya digunakan oleh alat kegigihan objek dan dalam pemetaan objek -relasional (ORM).Biasanya, hubungan kunci asing akan diekspos sebagai contoh objek dari jenis yang sesuai melalui properti.
+
+<hr>
+
+Untuk mencari tau apa saja yang bisa dilakukan oleh perintah, maka bisa seperti ini:
+
+<code>PS E:\laragon\www\prakweb2023-a-213040036-laravel> php artisan help make:model</code>
+
+<b>Atau bisa dari command pallet dengan <code>ctrl + Shift + p</code></b>
+lalu ketik: <code>artisan:make model</code>
+perintah ini agar migrasi nya otomatis di buatkan
+
+<hr>
+
+dan untuk menambahkan data column ke DB gunakan perintah ini
+
+<p>ini untuk migrasi data tanpa menghapus data sebelumnya</p>
+<code>php artisan migrate</code>
+
+<p>ini untuk migrasi data yang di hapus dulu baru di rubah</p>
+<code>php artisan migrate:fresh</code>
+
+<p>ini untuk menghapus isi data</p>
+<code>php artisan migrate:roolback</code>
+
+<hr>
+
+agar mencetak semua text html saat di article, maka gunakan seperti ini:
+
+<code>{!! $post->body !!}</code>
+
+<hr>
+
+<h3>Eloquent: Relationships</h3>
+<p>Tabel basis data sering berhubungan satu sama lain.Misalnya, posting blog mungkin memiliki banyak komentar atau pesanan dapat dikaitkan dengan pengguna yang menempatkannya.</p>
+
+<!-- --------------------------------------- -->
+
+<hr>
+
+Untuk mengisi data ke table DB bisa langsung dari terminal, untuk command nya, seperti ini:
+
+<code>php artisan tinker</code>
+<code>Psy Shell v0.11.22 (PHP 8.1.10 — cli) by Justin Hileman</code>
+<code>> $user = new App\Models\User</code>
+<code> = App\Models\User {#6279}</code>
+
+<code>> $user = new User;</code>
+<code>[!] Aliasing 'User' to 'App\Models\User' for this Tinker session.</code>
+<code> = App\Models\User {#6281}</code>
+
+<code>>$user->name = 'ridho fauzan';</code>
+<code> = "ridho fauzan"
+
+<code>> $user->email = 'ridhofauzan275@gmail.com';</code>
+<code> = "ridhofauzan275@gmail.com"</code>
+
+<code>> $user->password = bcrypt('27510');</code>
+<code> = "$2y$12$dDdn0XYSSmsJV/SEYSwy1up8CldH0XY8qg/JLG/5A1anIV8XKN5H."</code>
+
+<code>> $user->save()</code>
+<code> = true</code>
+
+<hr>
+
+<p>Untuk merubah data bisa mengunakan kode ini di terminal</p>
+<code>post::find(3)->update(['title' => 'judul ke tiga berubah'])</code>
+<p>maka akan muncul pesan true yang berarti berhasil</p>
+
+<p>atau dengan method where</p>
+
+<code>Post::where('title', 'judul ke tiga berubah')->update(['author' => 'masalalu'])</code>
+<p>Maka akan muncul jawaban 1, berarti berhasil<p>
+
+<hr>
+
+<p>Route Model Binding adalah</p>
+<p>mengirimkan instansi secara otomatis ke model yang sesuai</p>
 
 <p><code>@dd()</code>ini sama saja dengan <code>$Vardum();</code> di php, tetapi ini style Laravel</p>
+
+
+
+<b><h3>#</h3>Jika error seperti <code>Error Class "Category" Not Found</code></b>
+
+<p>Maka update psy/psyh di terminal dengan perintah</p>
+<code>composer update psy/psysh</code>
