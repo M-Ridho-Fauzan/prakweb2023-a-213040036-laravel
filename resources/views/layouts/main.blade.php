@@ -19,7 +19,9 @@
         }
 
         a:hover {
-            color: #7a7a7a;
+            color: #555555;
+            text-decoration: underline;
+
         }
     </style>
 </head>

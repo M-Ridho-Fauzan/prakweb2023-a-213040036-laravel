@@ -158,6 +158,42 @@ agar mencetak semua text html saat di article, maka gunakan seperti ini:
 <h3>Eloquent: Relationships</h3>
 <p>Tabel basis data sering berhubungan satu sama lain.Misalnya, posting blog mungkin memiliki banyak komentar atau pesanan dapat dikaitkan dengan pengguna yang menempatkannya.</p>
 
+<p>Untuk membuat relasi data base, maka buat relasi di folder model ke duanya </p>
+
+<h3>DataBase seeder adalah feature pengisi data otomatis dari laravel</h3>
+
+dan file seeding ada otomatis di database/seeder/DatabaseSeeder.php
+dan jika db test sudah di create, untuk run file seed maka ketik code ini di terminal
+<p><code>php artisan db:seed</code></p>
+
+Dan jika ingin menambahkan data baru ke seeder maka data harus di hapus dulu, tetapi bisa juga mengunakan perintah ini agar proses cepat
+<p><code>php artisan migrate:fresh --seed</code></p>
+
+
+<h3>Eloquent Model Factory</h3>
+<p>Adalah cara untuk membuat data testing/data dummy secara random seperti halnya seed, tetapi ini di buat secara otomatis oleh laravel dari library faker</p>
+
+<p>dan untuk membuat Model factory cukum masukan sintax ini di terminal VScode untuk membuat nya:</p>
+<p><code>php artisan make:factory PostFactory</code></p>
+
+<p>Untuk melihat lengkapnya dia bisa ngegenerate data apa saja, lihat <a href="https://fakerphp.github.io/formatters/" target="_blank">di sini.</a></p>
+
+<p>dan di faker ini bisa juga mengisi data berdasarkan format di setiap negara, tetapi harus di ubah dulu di bagian config/app.php, lalu cari <code>'faker_locale' => 'en_US',</code> lalu ubah menjadi <code>'faker_locale' => env('FAKER_LOCALE', 'en_US'),</code></p>
+<p>dan di bagian file .env tambahkan code ini <code>FAKER_LOCALE=id_ID</code>.</p>
+
+<p>Jadi penjelasan nya adalah, saat data indo tidak ada, maka akan mengunakan data inggris</p>
+
+<p>Dan untuk menjalankan nya sama seperti seeder mengunakan code ini</p>
+<p><code>php artisan migrate:fresh --seed</code></p>
+
+<p>Dan nanti kedepanya bisa juga dengan 1 command membuat 3 model, yaitu: migration, factory, & seeder</p>
+<p>Dengan menambahkan code ini di command agar sekalian <code> -mfs</code> jadi seperti ini:</p>
+<p><code>php artisan make:model Studen -mfs</code></p>
+<p>Untuk memasukan data dengan seed, agar data tidak terhapus bisa masukan kode ini</p>
+<p><code>php artisan db:seed</code></p>
+
+<code></code>
+<p></p>
 <!-- --------------------------------------- -->
 
 <hr>

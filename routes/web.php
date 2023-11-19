@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Category;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,10 +65,19 @@ Route::get('/categories', function(){
     ]);
 });
 
+// code di bawah ini untuk mengambil data saat category di clik di post atau posts
+
 Route::get('/categories/{category:slug}', function(Category $category){
-    return view('category', [
-        'judul' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name
+    return view('posts', [
+        'judul' => "Post By Category : $category->name",
+        'posts' => $category->posts->load('category', 'author')
+        // 'category' => $category->name
+    ]);
+});
+
+Route::get('/authors/{author:username}', function(User $author){
+    return view('posts', [
+        'judul' => "Post By Authors : $author->name",
+        'posts' => $author->posts->load('category', 'author')
     ]);
 });
